@@ -1,6 +1,6 @@
 :root {
     --hero-bg-image-fg-color: #f4dec3;
-    --contact-info-bg: none;
+    --contact-info-bg: #222731;
     --button-text-color2: #ffffff;
     --main-bg-color: #f4dec3;
     --menu-bg-color-1: #22273111;
@@ -17,7 +17,7 @@
     --menu-bg-color-2: #00000055;
     --button-color1: #222731;
     --selected-button-color2: #200;
-    --footer-text-color: #000;
+    --footer-text-color: #fefefe;
     --hero-text-color: #000;
     --header-bg-image: none;
     --button-text-color3: #fff;
@@ -26,7 +26,7 @@
     --button-text-color1: #fefefe;
     --main-text-color: #ffffff;
     --main-bg: #000;
-    --footer-bg-color: #fefefe;
+    --footer-bg-color: #222731;
     --selected-text-color1: #fff;
     --hero-bg-color: #000000;
 }

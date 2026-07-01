@@ -11,6 +11,7 @@ languageCode = 'en-tt'
     target = "content"
 title = 'The New Dim Sum King'
 baseURL = 'https://thenewdimsumking.ttmenus.com/'
+enableRobotsTXT = true
 
 [markup]
 
@@ -36,6 +37,8 @@ baseURL = 'https://thenewdimsumking.ttmenus.com/'
   page = ["HTML", "JSON"]
 
 [params]
+  tier = "tier1"
+  description = "The New Dim Sum King — authentic dim sum at East Gates Mall, Trincity. View our menu and order online."
   authServiceUrl = "https://auth.ttmenus.com"
   adsServiceUrl = "https://ads.ttmenus.com"
   notifyServiceUrl = "https://notify.ttmenus.com"
@@ -58,17 +61,47 @@ baseURL = 'https://thenewdimsumking.ttmenus.com/'
     # apiUrl = "http://localhost:8084/api"
     # serviceUrl = "http://localhost:8084"
 
+# Dashboard update-ui still reads site.Params.content.*
+[params.content]
+    enabled = true
+    apiUrl = "https://cms.ttmenus.com/api"
+    clientId = "ttms_thenewdimsumking"
+
+# Thumbor — on-demand resized images for dashboard previews
+[params.thumbor]
+    enabled = true
+    url = "https://thumbor.ttmenus.com"
+    sourceBaseUrl = "https://thenewdimsumking.ttmenus.com"
+    menuImagesUseThumbor = true
+
 # Notification Service Configuration
 [params.notifications]
     enabled = true
     apiUrl = "https://notify.ttmenus.com/api/v1"
     websocketUrl = "wss://notify.ttmenus.com/api/v1/ws/connect"
     serviceUrl = "https://notify.ttmenus.com"
+  clientDomain = "thenewdimsumking.ttmenus.com"
 
 [params.features]
     payments = false
     delivery = false
     notifications = true
+    analytics_access = true
+    featured = true
+    exclusive_ads = false
+    no_competitor_ads = false
+    unmetered_traffic = false
+
+# POS: enabled + provider drive runtime (head.html) and hub Account (index.json features.pos / pos_provider)
+[params.posintegration]
+    enabled = false
+    provider = ""
+    api_url = ""
+    access_token = ""
+    store_id = ""
+    sync_menu = false
+    auto_process_orders = false
+    fallback_to_whatsapp = true
 
 [params.orderingsystem]
     # Set to false to disable placing orders (cart still works; user gets message and order is cancelled)
@@ -80,6 +113,14 @@ baseURL = 'https://thenewdimsumking.ttmenus.com/'
     usephonecall = false
     whatsapp = 18684809999
     phone = 18684809999
+
+# Payment Service — menu checkout (enable when client is onboarded to pay subdomain)
+[params.paymentService]
+    enabled = false
+    apiUrl = "https://pay.thenewdimsumking.ttmenus.com"
+    clientId = "ttms_thenewdimsumking"
+    currency = "TTD"
+    provider = "wipay"
 
 [params.services]
     analyticsid = 0
